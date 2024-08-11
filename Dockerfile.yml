@@ -1,0 +1,17 @@
+# Imagem base para o MongoDB
+FROM mongo:latest
+
+# Diretório de trabalho para a aplicação Node.js
+WORKDIR /app
+
+# Copia os arquivos da aplicação para o diretório de trabalho
+COPY . /app
+
+# Instala as dependências da aplicação
+RUN npm install
+
+# Expõe a porta da aplicação
+EXPOSE 3000
+
+# Comando para iniciar a aplicação
+CMD ["npm", "start"]
