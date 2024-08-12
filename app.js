@@ -42,12 +42,8 @@ app.use((req, res, next) => {
     next();
 });
 
-// Defina a rota POST para a URL raiz
-app.post('/', (req, res) => {
-    res.status(200).send('Requisição POST recebida com sucesso!');
-});
 
-app.use('/farmers', userRoutes);
+app.use(userRoutes);
 
 swaggerDocs(app);
 
